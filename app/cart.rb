@@ -6,8 +6,8 @@ class Cart
     req = Rack::Request.new(env)
 
   if req.path.match(/cart/)
-    @@cart.size == 0
-    resp.write "Your cart is empty"
+    if @@cart.size == 0
+      resp.write "Your cart is empty"
     ## if were running this code, that means the user visited our site
     # at path /cart
 
