@@ -25,7 +25,8 @@ class Application
         resp.write "We don't have that item"
       end
 
-    search_term = req.params["q"]
+    
+    search_term = req.params["item"]
   end
 
     if req.path.match(/items/)
