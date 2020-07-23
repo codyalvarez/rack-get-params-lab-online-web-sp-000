@@ -16,7 +16,7 @@ class Cart
       if @@cart.include?(search_term)
         resp.write "#{search_term} is one of out items"
       else
-        resp.write "Couldn't find #{search_term}"
+        resp.write "Your cart is empty"
       end
 
     else
