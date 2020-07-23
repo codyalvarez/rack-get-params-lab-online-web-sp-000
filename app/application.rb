@@ -16,6 +16,14 @@ class Application
       end
     end
 
+    if req.path.match(/add/)
+      if @@items.include? # item
+        @@items << # item 
+      else
+        @@items.include?! # item
+        # do nothing
+      end
+
     if req.path.match(/items/)
       @@items.each do |item|
         resp.write "#{item}\n"
