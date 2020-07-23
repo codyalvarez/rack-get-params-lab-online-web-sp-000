@@ -10,7 +10,7 @@ class Cart
     #     resp.write "#{item}\n"
     #   end
     # elsif req.path.match(/search/)
-    # 
+    #
     #   search_term = req.params["q"]
 
   elsif @@cart.empty?(search_term)
