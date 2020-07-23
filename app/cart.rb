@@ -15,6 +15,4 @@ class Cart
         "Path Not Found"
       end
     end
-
-
-    end
+end
