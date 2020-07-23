@@ -19,6 +19,7 @@ class Application
     if req.path.match(/add/)
       if @@items.include?(search_term)
         resp.write "added #{search_term}"
+        @@items << search_term
       else
         @@items.include?!(search_term)
         resp.write "We don't have that item"
