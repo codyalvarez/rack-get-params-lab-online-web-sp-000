@@ -23,6 +23,7 @@ class Application
         @@items.include?! # item
         # do nothing
       end
+    end
 
     if req.path.match(/items/)
       @@items.each do |item|
