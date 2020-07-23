@@ -19,14 +19,10 @@ class Cart
       if @@cart.include?(search_term)
         resp.write "#{search_term} is one of out items"
       elsif @@cart.empty?(search_term)
-          resp.write "Your cart is empty"
-        else
-          resp.write "Path Not Found"
+        resp.write "Your cart is empty"
+      else
+        resp.write "Path Not Found"
       end
-
-    else
-      resp.write "Path Not Found"
-    end
 
     resp.finish
   end
