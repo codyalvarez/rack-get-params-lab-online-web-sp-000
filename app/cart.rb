@@ -13,9 +13,6 @@ class Cart
 
       search_term = req.params["q"]
 
-    elsif @@cart.empty?(search_term)
-      resp.write "Your cart is empty"
-
     if @@cart.include?(search_term)
       resp.write "#{search_term} is one of out items"
     elsif @@cart.empty?(search_term)
