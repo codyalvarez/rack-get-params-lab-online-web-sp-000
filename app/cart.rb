@@ -5,22 +5,15 @@ class Cart
     resp = Rack::Response.new
     req = Rack::Request.new(env)
 
-    if req.path.match(/cart/)
-      @@cart.each do |item|
-        resp.write "#{item}\n"
+  if req.path.match(/cart/)
+    @@cart.size == 0
+    resp.write "Your cart is empty"
+    ## if were running this code, that means the user visited our site
+    # at path /cart
+
+    ## if it is here that we check cart array to see if its empty to give the user
+    ## helpful message
+
+    @@cart.each do |item|
+      resp.write "#{item}\n"
     end
-  elsif req.path.match(/search/)
-
-      search_term = req.params["q"]
-
-    if @@cart.include?(search_term)
-      resp.write "#{search_term} is one of out items"
-    elsif @@cart.empty?(search_term)
-      resp.write "Your cart is empty"
-    else
-      resp.write "Path Not Found"
-    end
-
-    resp.finish
-  end
-end
