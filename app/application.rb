@@ -18,7 +18,7 @@ class Application
 
     if req.path.match(/add/)
       if @@items.include? # item
-        @@items << # item 
+        @@items << # item
       else
         @@items.include?! # item
         # do nothing
