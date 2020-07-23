@@ -17,13 +17,15 @@ class Application
     end
 
     if req.path.match(/add/)
-      if @@items.include? # item
-        @@items << # item
+      if @@items.include?(search_term)
+        resp.write "added #{search_term}"
       else
-        @@items.include?! # item
-        # do nothing
+        @@items.include?!(search_term)
+        resp.write "We don't have that item"
       end
-    end
+
+    search_term = req.params["q"]
+  end
 
     if req.path.match(/items/)
       @@items.each do |item|
