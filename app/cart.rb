@@ -8,11 +8,10 @@ class Cart
   if req.path.match(/cart/)
     if @@cart.size == 0
       resp.write "Your cart is empty"
-    elsif req.path.match(/cart/)
+    else
       @@cart.each do |item|
         resp.write "#{item}\n"
-      else
-        "Path Not Found"
       end
     end
+  end
 end
