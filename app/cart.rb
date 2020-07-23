@@ -13,6 +13,8 @@ class Cart
         resp.write "#{item}\n"
       else
         "Path Not Found"
+      end
+    end
 
 
     end
