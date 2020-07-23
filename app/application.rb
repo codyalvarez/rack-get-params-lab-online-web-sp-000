@@ -17,6 +17,7 @@ class Application
     end
 
     if req.path.match(/add/)
+        search_term = req.params["item"]
       if @@items.include?(search_term)
         resp.write "added #{search_term}"
         @@items << search_term
@@ -25,7 +26,6 @@ class Application
         resp.write "We don't have that item"
       end
 
-    search_term = req.params["item"]
   end
 
     if req.path.match(/items/)
