@@ -9,7 +9,7 @@ class Cart
       @@cart.each do |item|
         resp.write "#{item}\n"
     end
-    elsif req.path.match(/search/)
+  elsif req.path.match(/search/)
 
       search_term = req.params["q"]
 
