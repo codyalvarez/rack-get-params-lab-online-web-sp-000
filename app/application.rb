@@ -25,7 +25,6 @@ class Application
         resp.write "We don't have that item"
       end
 
-
     search_term = req.params["item"]
   end
 
